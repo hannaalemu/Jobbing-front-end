@@ -2,26 +2,40 @@ import React from 'react';
 
 import Auth from './components/auth/auth';
 
-import LoginContext from './components/auth/context';
+import LoginProvider from './components/auth/context';
 
-const Read = props => {
+import Login from './components/auth/login';
+
+
+const Read = (props) => {
   return (
     <Auth capability = "read">
       <span>Read</span>
     </Auth>
   );
+};
+
+
+const Update = props => {
+  return (
+    <Auth capability="update">
+      <span>Update</span>
+    </Auth>
+  );
 }
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-  }
-
+class App extends React.Component {
   render() {
     return (
-            <h1>Hello World </h1>
+      <LoginProvider>
+        <Login />
+        <hr />
+
+        <Read />
+        <Update />
+      </LoginProvider>
     );
   }
 }
+
+export default App;

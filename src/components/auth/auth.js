@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { LoginContext } from './context';
 
@@ -12,9 +14,9 @@ class Auth extends React.Component {
       let okToRender = false;
 
       try {
-        okToRender = this.context.loggedIn && (this.props.capability
-          ? this.context.user.capabilities.includes(this.props.capability)
-          : true);
+        if (this.props.capability) {
+          if (this.context.user.capabilities.includes(this.props.capability)) { okToRender = true; }
+        }
       } catch (error) {
         console.warn('Unauthorized request');
       }

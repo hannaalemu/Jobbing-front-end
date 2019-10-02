@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable react/prop-types */
 // Hanna - this is the context provider, creates methods and data required for autorization
 
@@ -26,8 +27,8 @@ class LoginProvider extends React.Component {
 
   // Hanna - Login
   login = (username, password, type) => {
-    let options = {
-      methof: 'POST',
+    const options = {
+      method: 'POST',
       mode: 'cors',
       cache: 'no-cache',
       headers: new Headers({
@@ -35,41 +36,42 @@ class LoginProvider extends React.Component {
       }),
     };
 
-    if(type === signup) {
-        options.body = JSON.stringify({username, password});
-        options.headers = new headers ({
-            'Content-type': 'applitcation/json',
-        });
+    if (type === 'signup') {
+      options.body = JSON.stringify({ username, password });
+      options.headers = new Headers({
+        'Content-Type': 'application/json',
+      });
     }
     fetch(`${API}/${type}`, options)
-      .then( response = response.text())
+      .then((response) => response.text())
       .then((token) => this.validateToken(token))
       .catch(console.error);
   }
   // Logout
 
-  logout()
+  logout = () => {
+    this.setLoginState(false, null, {});
+  }
 
   // validateToken
 validateToken = (token) => {
-    try {
-        let user = jwt.verify(token, process.env.REACT_APP_SECRET);
-        console.log(user);
-        this.setLoginState(true, user, token);
-    } catch(error) {
-        this.setLoginState(false, null, {});
-    }
+  try {
+    const user = jwt.verify(token, process.env.REACT_APP_SECRET);
+    this.setLoginState(true, user, token);
+  } catch (error) {
+    this.setLoginState(false, null, {});
+  }
 }
-  // state handling
+// state handling
 
   setLoginState = (loggedIn, user, token) => {
-cookie.save('auth', token);
-this.setState({token,loggedIn, user})
-
+    cookie.save('auth', token);
+    this.setState({ token, loggedIn, user });
   }
-  componentDidMount() {
-      const coo
 
+  componentDidMount() {
+    const cookieToken = cookie.load('auth');
+    this.validateToken(cookieToken);
   }
 
   render() {
