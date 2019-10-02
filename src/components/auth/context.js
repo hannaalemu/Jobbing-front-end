@@ -1,0 +1,84 @@
+/* eslint-disable react/prop-types */
+// Hanna - this is the context provider, creates methods and data required for autorization
+
+import React from 'react';
+import jwt from 'jsonwebtoken';
+
+import cookie from 'react-cookies';
+
+export const LoginContext = React.createContext();
+
+const API = process.env.REACT_APP_API;
+
+class LoginProvider extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      // Hanna - all the auth data we are passing to children
+      loggedIn: false,
+      token: null,
+      user: {},
+      login: this.login,
+      logout: this.logout,
+    };
+  }
+
+
+  // Hanna - Login
+  login = (username, password, type) => {
+    let options = {
+      methof: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
+      headers: new Headers({
+        Authorization: `Basic ${btoa(`${username}:${password}`)}`,
+      }),
+    };
+
+    if(type === signup) {
+        options.body = JSON.stringify({username, password});
+        options.headers = new headers ({
+            'Content-type': 'applitcation/json',
+        });
+    }
+    fetch(`${API}/${type}`, options)
+      .then( response = response.text())
+      .then((token) => this.validateToken(token))
+      .catch(console.error);
+  }
+  // Logout
+
+  logout()
+
+  // validateToken
+validateToken = (token) => {
+    try {
+        let user = jwt.verify(token, process.env.REACT_APP_SECRET);
+        console.log(user);
+        this.setLoginState(true, user, token);
+    } catch(error) {
+        this.setLoginState(false, null, {});
+    }
+}
+  // state handling
+
+  setLoginState = (loggedIn, user, token) => {
+cookie.save('auth', token);
+this.setState({token,loggedIn, user})
+
+  }
+  componentDidMount() {
+      const coo
+
+  }
+
+  render() {
+    return (
+            <LoginContext.Provider value={this.state}>
+                {this.props.children}
+            </LoginContext.Provider>
+    );
+  }
+}
+
+export default LoginProvider;
