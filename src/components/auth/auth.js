@@ -18,7 +18,7 @@ class Auth extends React.Component {
           if (this.context.user.capabilities.includes(this.props.capability)) { okToRender = true; }
         }
       } catch (error) {
-        console.warn('Unauthorized request');
+        // console.warn('Unauthorized request');
       }
 
       return (
