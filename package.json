@@ -5,7 +5,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "eslint src/**/*.js",
+    "lint": "eslint src --ext .js --fix",
     "test": "react-scripts test --env=jsdom",
     "docs": "styleguidist server",
     "docs:build": "styleguidist build"
@@ -22,12 +22,15 @@
   },
   "homepage": "https://github.com/hannaalemu/Jobbing-front-end#readme",
   "dependencies": {
-    "node-sass": "^4.12.0",
     "jsonwebtoken": "^8.5.1",
-    "react-cookies": "^0.1.1",
+    "node-sass": "^4.12.0",
+    "prop-types": "^15.7.2",
     "react": "^16.10.1",
+    "react-cookies": "^0.1.1",
     "react-dom": "^16.10.1",
-    "react-scripts": "^3.1.2"
+    "react-redux": "^7.1.1",
+    "react-scripts": "^3.1.2",
+    "redux": "^4.0.4"
   },
   "devDependencies": {
     "eslint-config-airbnb-base": "^14.0.0",
@@ -36,6 +39,7 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "react-styleguidist": "^9.1.16",
-    "react-test-renderer": "^16.9.0"
+    "react-test-renderer": "^16.9.0",
+    "redux-devtools-extension": "^2.13.8"
   }
 }

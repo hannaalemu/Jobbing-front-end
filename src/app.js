@@ -7,36 +7,18 @@ import LoginProvider from './components/auth/context';
 
 import Login from './components/auth/login';
 
+import Jobs from './components/jobs';
 
-const Read = (_props) => {
+
+const App = () => {
   return (
-    <Auth capability = "read">
-      <span>Read</span>
-    </Auth>
-  );
-};
-
-
-const Update = (props) => {
-  return (
-    <Auth capability="update">
-      <span>Update</span>
-    </Auth>
-  );
-};
-
-class App extends React.Component {
-  render() {
-    return (
       <LoginProvider>
         <Login />
-        <hr />
-
-        <Read />
-        <Update />
+       <Auth capability="edit">
+         <Jobs />
+       </Auth>
       </LoginProvider>
-    );
-  }
-}
+  );
+};
 
 export default App;
