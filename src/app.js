@@ -14,7 +14,7 @@ const App = () => {
   return (
       <LoginProvider>
         <Login />
-       <Auth capability="edit">
+       <Auth capability="read">
          <Jobs />
        </Auth>
       </LoginProvider>

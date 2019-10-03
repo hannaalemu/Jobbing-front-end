@@ -42,7 +42,7 @@ const Jobs = (props) => {
         <input
           type="text"
           placeholder="Job Content"
-          value={JobContent}
+          value={jobContent}
           onChange={(e) => setJobContent(e.target.value)}
         />
         <button type="submit">Submit</button>
@@ -66,7 +66,4 @@ Jobs.propTypes = {
   jobs: PropTypes.array,
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Jobs);
+export default connect(mapStateToProps, mapDispatchToProps)(Jobs);

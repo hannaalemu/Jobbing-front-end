@@ -3,10 +3,10 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import thunk from './middleware/thunk';
 // import thunk from 'redux-thunk';
-import todos from './reducers/jobs';
+import jobs from './reducers/jobs';
 
 const reducers = combineReducers({
-  todos,
+  jobs,
 });
 
 const store = () => createStore(reducers, composeWithDevTools(applyMiddleware(thunk)));

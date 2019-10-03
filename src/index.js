@@ -11,7 +11,6 @@ const Main = () => {
   return (
     <Provider store={store}>
       < App />
-
     </Provider>
   );
 };
