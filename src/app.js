@@ -9,12 +9,15 @@ import Login from './components/auth/login';
 
 import Jobs from './components/jobs';
 
+import Header from './components/header';
+
 
 const App = () => {
   return (
       <LoginProvider>
         <Login />
        <Auth capability="read">
+         <Header />
          <Jobs />
        </Auth>
       </LoginProvider>

@@ -4,7 +4,11 @@ export default (state = [], action) => {
       return action.payload;
     case 'ADD_JOBS':
       return [...state, action.payload];
-    default:
+    case 'DELETE_JOB':
+      return state.filter(job => job._id === action.payload.id ? false : true)
+    case 'UPDATE_JOB':
+        return state.map(job => job._id === action.payload.id ? {...state, ...action.payload} : job)
+      default:
       return state;
   }
 };

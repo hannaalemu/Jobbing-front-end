@@ -16,6 +16,19 @@ const add = (payload) => {
   };
 };
 
+const remove = (payload) => {
+  return {
+    type: 'DELETE_JOB',
+    payload,
+  }
+}
+
+const update = (payload) => {
+  return {
+    type: 'UPDATE_JOB',
+    payload,
+  };
+}
 
 const fetchJobs = () => (dispatch) => {
   return fetch(`${API}/api/v1/job`)
@@ -38,8 +51,37 @@ const addJobs = (job) => (dispatch) => {
     .then((data) => dispatch(add(data)));
 };
 
+const deleteJob = (job) => (dispatch) => {
+  const options = {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+  };
+
+  return fetch(`${API}/api/v1/job/${job.id}`, options)
+    .then(() => dispatch(remove(job.id)))
+
+};
+
+const updateJob = (job) => (dispatch) => {
+  const options = {
+    method: 'UPDATE',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+    },
+  };
+
+  return fetch(`${API}/api/v1/job/${job.id}`, options)
+    .then(() => dispatch(update(job.id)))
+
+}
 
 export default {
   fetchJobs,
   addJobs,
+  updateJob,
+  deleteJob
 };
