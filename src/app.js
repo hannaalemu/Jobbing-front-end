@@ -1,27 +1,27 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 
 import Auth from './components/auth/auth';
 
-import LoginContext from './components/auth/context';
+import LoginProvider from './components/auth/context';
 
-const Read = props => {
+import Login from './components/auth/login';
+
+import Jobs from './components/jobs';
+
+import Header from './components/header';
+
+
+const App = () => {
   return (
-    <Auth capability = "read">
-      <span>Read</span>
-    </Auth>
+      <LoginProvider>
+        <Login />
+       <Auth capability="read">
+         <Header />
+         <Jobs />
+       </Auth>
+      </LoginProvider>
   );
-}
+};
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-  }
-
-  render() {
-    return (
-            <h1>Hello World </h1>
-    );
-  }
-}
+export default App;

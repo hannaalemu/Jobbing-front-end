@@ -1,17 +1,15 @@
 {
-  "name": "Jobbing-front-end",
   "version": "1.0.0",
   "description": "This repository holds the front-end aspect of the Jobbing project",
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "eslint src/**/*.js",
+    "lint": "eslint src --ext .js --fix",
     "test": "react-scripts test --env=jsdom",
     "docs": "styleguidist server",
     "docs:build": "styleguidist build"
   },
-  "proxy": "http://localhost:4000",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hannaalemu/Jobbing-front-end.git"
@@ -24,18 +22,33 @@
   },
   "homepage": "https://github.com/hannaalemu/Jobbing-front-end#readme",
   "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jsonwebtoken": "^8.5.1",
     "node-sass": "^4.12.0",
-    "react": "^16.10.1",
-    "react-dom": "^16.10.1",
-    "react-scripts": "^3.1.2"
+    "prop-types": "^15.7.2",
+    "react": "^16.10.2",
+    "react-cookies": "^0.1.1",
+    "react-dom": "^16.10.2",
+    "react-redux": "^7.1.1",
+    "react-scripts": "^3.2.0",
+    "reactstrap": "^8.0.1",
+    "redux": "^4.0.4",
+    "superagent": "^5.1.0"
   },
   "devDependencies": {
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-jest": "^22.17.0",
-    "eslint-plugin-react": "^7.14.3",
+    "acorn": "^6.0.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "jquery": "^1.9.1",
     "react-styleguidist": "^9.1.16",
-    "react-test-renderer": "^16.9.0"
+    "react-test-renderer": "^16.10.2",
+    "redux-devtools-extension": "^2.13.8"
   }
 }
