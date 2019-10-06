@@ -16,8 +16,8 @@ This repository holds the front-end aspect of the Jobbing project
 ### Links and Resources
 * [submission PR](http://xyz.com)
 * [travis](http://xyz.com)
-* [back-end](http://xyz.com) (when applicable)
-* [front-end](http://xyz.com) (when applicable)
+* [back-end](https://jobbing-back-end.herokuapp.com/)
+* [front-end](https://jobbing-front-end.herokuapp.com/) 
 
 
 ### Modules
