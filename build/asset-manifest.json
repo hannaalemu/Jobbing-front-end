@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/hannaalemu/Jobbing-front-end/static/js/main.53ab8773.chunk.js",
-    "main.js.map": "/hannaalemu/Jobbing-front-end/static/js/main.53ab8773.chunk.js.map",
+    "main.js": "/hannaalemu/Jobbing-front-end/static/js/main.7626e45e.chunk.js",
+    "main.js.map": "/hannaalemu/Jobbing-front-end/static/js/main.7626e45e.chunk.js.map",
     "runtime-main.js": "/hannaalemu/Jobbing-front-end/static/js/runtime-main.f476ba6b.js",
     "runtime-main.js.map": "/hannaalemu/Jobbing-front-end/static/js/runtime-main.f476ba6b.js.map",
     "static/css/2.0624914a.chunk.css": "/hannaalemu/Jobbing-front-end/static/css/2.0624914a.chunk.css",
     "static/js/2.8e009e15.chunk.js": "/hannaalemu/Jobbing-front-end/static/js/2.8e009e15.chunk.js",
     "static/js/2.8e009e15.chunk.js.map": "/hannaalemu/Jobbing-front-end/static/js/2.8e009e15.chunk.js.map",
     "index.html": "/hannaalemu/Jobbing-front-end/index.html",
-    "precache-manifest.4fe0a5ea14203c49b5b4fc962f515e41.js": "/hannaalemu/Jobbing-front-end/precache-manifest.4fe0a5ea14203c49b5b4fc962f515e41.js",
+    "precache-manifest.f5ff1ad00ae8260d7116428cd7b7c655.js": "/hannaalemu/Jobbing-front-end/precache-manifest.f5ff1ad00ae8260d7116428cd7b7c655.js",
     "service-worker.js": "/hannaalemu/Jobbing-front-end/service-worker.js",
     "static/css/2.0624914a.chunk.css.map": "/hannaalemu/Jobbing-front-end/static/css/2.0624914a.chunk.css.map"
   },
@@ -16,6 +16,6 @@
     "static/js/runtime-main.f476ba6b.js",
     "static/css/2.0624914a.chunk.css",
     "static/js/2.8e009e15.chunk.js",
-    "static/js/main.53ab8773.chunk.js"
+    "static/js/main.7626e45e.chunk.js"
   ]
 }
