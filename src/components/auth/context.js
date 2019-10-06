@@ -11,6 +11,8 @@ export const LoginContext = React.createContext();
 
 const API = 'https://jobbing-back-end.herokuapp.com';
 
+const REACT_APP_SECRET='jobbingisawesome';
+
 class LoginProvider extends React.Component {
   constructor(props) {
     super(props);
@@ -56,7 +58,7 @@ class LoginProvider extends React.Component {
   // validateToken
 validateToken = (token) => {
   try {
-    const user = jwt.verify(token, process.env.REACT_APP_SECRET);
+    const user = jwt.verify(token, REACT_APP_SECRET);
     this.setLoginState(true, user, token);
   } catch (error) {
     this.setLoginState(false, null, {});
