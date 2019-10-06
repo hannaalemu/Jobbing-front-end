@@ -35,7 +35,7 @@ class Job extends Component {
 
   _refreshJobs() {
 
-    superagent.get('http://localhost:8080/api/v1/job')
+    superagent.get('https://jobbing-back-end.herokuapp.com/api/v1/job')
       .then((response => {
         console.log(response);
         this.setState({
@@ -79,7 +79,7 @@ class Job extends Component {
   }
 
   addNewJob = (event) => {
-    superagent.post('http://localhost:8080/api/v1/job', this.state.newJobData) 
+    superagent.post('https://jobbing-back-end.herokuapp.com/api/v1/job', this.state.newJobData) 
       .then((response) => {
         
         // Hanna = After we add a new Job,  we want to reset the state to include the new job, close the modal, and reset new Job Data to empty so the user can add another job, and they won't see the old job data in the modal
@@ -112,7 +112,7 @@ class Job extends Component {
   updateJob = () => {
     let { title, location, dateApplied } = this.state.editJobData;
 
-    superagent.put('http://localhost:8080/api/v1/job/' + this.state.editJobData._id, {
+    superagent.put('https://jobbing-back-end.herokuapp.com/api/v1/job/' + this.state.editJobData._id, {
       
       title, location, dateApplied 
     })
@@ -135,7 +135,7 @@ class Job extends Component {
   }
 
   handleDelete = (_id) => {
-    superagent.delete('http://localhost:8080/api/v1/job/' + _id, {
+    superagent.delete('https://jobbing-back-end.herokuapp.com/api/v1/job/' + _id, {
      
     })
       .then((response) => {

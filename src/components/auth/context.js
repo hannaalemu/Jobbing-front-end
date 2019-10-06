@@ -9,7 +9,7 @@ import cookie from 'react-cookies';
 
 export const LoginContext = React.createContext();
 
-const API = process.env.REACT_APP_API;
+const API = 'https://jobbing-back-end.herokuapp.com';
 
 class LoginProvider extends React.Component {
   constructor(props) {
