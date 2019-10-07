@@ -1,8 +1,22 @@
 import React, { Component } from 'react';
 
-import { Modal, ModalHeader, ModalBody,Input, FormGroup, Label, ModalFooter, Table, Button } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, Input, FormGroup, Label, ModalFooter, Table, Button } from 'reactstrap';
 
 import superagent from 'superagent';
+
+const TableStyle = {
+  color: "white",
+  opacity: "0.9"
+}
+
+const TheadStyle = {
+  fontSize: "25px",
+  fontWeight: "80%"
+}
+
+const TdataStyle = {
+  fontSize: "20px",
+}
 
 class Job extends Component {
 
@@ -172,7 +186,7 @@ class Job extends Component {
     return (
       <div className='Job container'>
 
-        <Button color="primary" onClick={this.toggleNewJobModal.bind(this)}>Add new Job</Button>
+        <Button className="addJobButton" onClick={this.toggleNewJobModal.bind(this)}>Add new Job</Button>
 
         <Modal isOpen={this.state.newJobModal} toggle={this.toggleNewJobModal.bind(this)}>
 
@@ -268,9 +282,9 @@ class Job extends Component {
 
       </Modal>
 
-        <Table>
+        <Table style={TableStyle}>
           <thead>
-            <tr>
+            <tr style={TheadStyle}>
               <th>Job ID</th>
               <th>Title</th>
               <th>Location</th>
@@ -279,7 +293,7 @@ class Job extends Component {
             </tr>
           </thead>
 
-          <tbody>
+          <tbody style={TdataStyle}>
             {jobs}
           </tbody>
 
