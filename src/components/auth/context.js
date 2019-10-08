@@ -78,7 +78,7 @@ validateToken = (token) => {
 
   render() {
     return (
-            <LoginContext.Provider value={this.state}>
+            <LoginContext.Provider value={this.state} >
                 {this.props.children}
             </LoginContext.Provider>
     );
