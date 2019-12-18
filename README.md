@@ -1,4 +1,8 @@
 # Jobbing-front-end
+
+## Jobbing is a small web-app made to make the job searching process more organized to achieve better results! It lets the user keep track of their job applications, document important details about their targeted companies, and set reminders for following up with recruiters (or Hiring managers).
+
+
 This repository holds the front-end aspect of the Jobbing project
 
 ### Author: Hanna Alemu
