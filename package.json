@@ -46,7 +46,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "jquery": "^1.9.1",
+    "jquery": "^3.5.0",
     "react-styleguidist": "^9.1.16",
     "react-test-renderer": "^16.10.2",
     "redux-devtools-extension": "^2.13.8"
